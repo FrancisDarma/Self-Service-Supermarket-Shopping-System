@@ -1,5 +1,8 @@
+import pdb
 
-# menampilkan menu aplikasi
+# pdb.set_trace()
+
+# menampilkan menu aplikasi utama
 input_main = input('''
         ============= SUPERMARKET ABC =================    
         Halo Bapak/Ibu, selamat datang di layanan Self Service Toko ABC!
@@ -8,16 +11,28 @@ input_main = input('''
         
         Silahkan untuk melanjutkan ke pemilihan barang yang akan dibeli,
         dengan ketik "YA": ''')    
-    
-    # mengembalikan nilai input1
 
-# definisikan fungsi/metode menambah item
-def add_item(pilihan):
-    if pilihan == 'YA':
-        from super_cashier import data_barang
-        print("Betul")
-        return pilihan 
-    else:
-        print("Salah")
+#lanjut ke menu berikutnya apabila user menjawab ya
+if input_main.upper() == "YA": 
     
-add_item(input_main.upper())    
+    #import menu input_belanja
+    from modul_belanja import input_belanja
+    from modul_belanja import check_input
+    from write_data import write_data_to_csv
+    
+    #check input
+    write_data_to_csv(check_input(input_belanja(input_main=input_main.upper()))) 
+
+#keluar apabila user pilih tidak
+elif input_main.upper() == "TIDAK":
+    print("Terima kasih untuk kesediaan Anda menggunakan aplikasi ini")
+    
+#tampilkan error apabila input selain ya/tidak
+else :
+    raise Exception("Input error!")
+
+
+
+
+
+

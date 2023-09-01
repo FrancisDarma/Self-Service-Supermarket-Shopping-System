@@ -1,2 +1,5 @@
-nama_barang,harga_barang,jumlah_barang
-Udin Petot,2,3000
+id_pembeli,nama_barang,jumlah_barang,harga_barang,kota
+1693542025_4634_1,BANDENG ASAP,3,90000,Cimahi
+1693542025_4634_1,APEL MALANG,2,30000,Cimahi
+1693542025_4634_1,AYAM KAMPUNG,10,60000,Semarang
+1693542025_4634_1,JERUK PONKAM,3,60000,Cimahi

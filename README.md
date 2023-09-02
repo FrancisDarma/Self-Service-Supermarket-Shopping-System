@@ -145,28 +145,72 @@
         </li>
         <li>
         <h2>Program Structure Description</h2>
+        <ul>
+            <li>
+            <h3>Database Design</h3>
+                <ul>
+                    <li>
+                    Step 1: Create database data_super_cashier.db
+                    </li>
+                    <li>
+                    Step 2: Identifying fields that need to exist in table database.Image can be seen below:
+                    <img src="./images/table.png" alt="transaction table picture"/>
+                    </li>
+                    Output: data_super_cashier.db
+                    </li>
+                </ul>
+            </li>
+            <li>
+            <h3>Method and Object Design</h3>
+                <ul>
+                    <li>
+                    Step 1: Identifying modules, class and functions needed to establish the customer journey.
+                    </li>
+                    <li>
+                    Step 2: Build modules based on their functionalities and each of the modules have classes and functions that supports those functions, classes and function list can seen below
+                    </li>
+                    </li>
+                    Step 3: Establish connection with SQLite database by built an table manipulation modules.
+                    </li>
+                    <li>
+                    Step 4: Import the modules in main.py,
+                    </li>
+                </ul>
+            <img src="./images/function_list.png" alt="list of function table"/>
+            </li>
+        </ul>
         </li>
         <li>
         <h2>Guide to Try It Yourself</h2>
             <ol>
                 <li>Clone/download this git repository into your local computer. It should contain:
-                    <img src="img/git.png" width="1000"/>
+                    <img src="./images/files_list.png" width="300"/>
                 </li>
-                <li>Open main.py file > change sql password information. Refer to screenshot below:
-                    <img src="img/py.png" width="1000"/>
-                </li>
-                <li>Open terminal > go to git repository file on your local computer
-                </li>
-                <li>Execute "python main.py" file on your terminal. Refer to screenshot below:
-                    <img src="img/terminal.png" width="1000"/>
+                <li>Open terminal > go to git repository directory or any file location where you download the files on your local computer, then type "python main.py" on your command line to execute. Refer to screenshot below:
+                    <img src="./images/intro_menu.png" width="1000"/>
                 </li>
             </ol>
         </li>
         <li>
         <h2>Test Case</h2>
+            <ol>
+                <li><h3>Add order item</h3></li>
+                <li><h3>Delete item</h3></li>
+                <li><h3>Reset Transaction</h3></li>
+                <li><h3>Checkout</h3></li>
+            </ol>
         </li>
         <li>
         <h2>Conlusion</h2>
+            <ol>
+                <li>
+                For further improvement, this system need more comprehensive tables and RDBMS that could contain data beyond transactions like customers data, item stocks so the system can work on full scope and functionality.
+                </li>
+                <li>
+                We might need to implement this system to web based applications with better UI and UX instead of only using Command Line Interface.
+                </li>
+                <li></li>
+            </ol>
         </li>
 <hr/>
 <footer>

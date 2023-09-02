@@ -202,15 +202,14 @@
         </li>
         <li>
         <h2>Conlusion</h2>
-            <ol>
+            <ul>
                 <li>
                 For further improvement, this system need more comprehensive tables and RDBMS that could contain data beyond transactions like customers data, item stocks so the system can work on full scope and functionality.
                 </li>
                 <li>
                 We might need to implement this system to web based applications with better UI and UX instead of only using Command Line Interface.
                 </li>
-                <li></li>
-            </ol>
+            </ul>
         </li>
 <hr/>
 <footer>

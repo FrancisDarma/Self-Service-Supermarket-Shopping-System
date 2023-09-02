@@ -18,12 +18,13 @@ class MenuInput:
     """
     
     #membuat atribut kelas MenuInput
-    def __init__(self, input_main, input_item, id_pembeli, ulang_belanja, input_check_order):
+    def __init__(self, input_main, input_item, id_pembeli, ulang_belanja, input_check_order, input_menu_update):
         self.id_pembeli = id_pembeli
         self.input_main = input_main
         self.input_item = input_item
         self.ulang_belanja = ulang_belanja
         self.input_check_order = input_check_order
+        self.input_menu_update = input_menu_update
     
     #definisikan menu check_input
     def check_input(self, id_pembeli, input_main):
@@ -82,6 +83,9 @@ class MenuInput:
                 input_item['jumlah_barang']=int(input_item['jumlah_barang'])   
                 input_item['harga_barang']=int(input_item['harga_barang'])            
                 input_item['kota']=str(input_item['kota']) 
+                
+                #simpan dictionary ke dalam variabel input_item
+                self.input_item = dict(input_item)
                             
             #keluarkan perintah error apabila tipe, nama dan index variabel tidak sesuai   
             except (NameError, ValueError, TypeError,IndexError):
@@ -94,6 +98,10 @@ class MenuInput:
                     tidak sesuai
                     =============================================
                                 ''')   
+                
+                #kembalikan input item ke dict kosong
+                input_item = {}
+                self.input_item=input_item
                 
                 #panggil kembali fungsi check_input
                 self.check_input(id_pembeli=id_pembeli, input_main=input_main)
@@ -133,9 +141,6 @@ class MenuInput:
 
             #apabila data lolos dari pengujian sebelumnya   
             finally :
-                
-                #simpan dictionary ke dalam variabel input_item
-                self.input_item = dict(input_item)
                                 
                 #print proses berhasil/sukses
                 print('''
@@ -403,7 +408,7 @@ class MenuInput:
         try:
                     
             #lakukan ini apabila check_order == tidak
-            if input_check_order=='TIDAK':
+            if self.input_check_order=='TIDAK':
 
                 #buat instance write_data
                 write_data = WriteData(input_main=input_main, input_item=input_item, ulang_belanja=ulang_belanja, check_first_data=check_first_data)
@@ -494,10 +499,10 @@ class MenuInput:
         try:
          
             #keluarkan menu update jika check_order iya
-            if input_check_order == 'UBAH':
+            if self.input_check_order == 'UBAH':
                 
                 #munculkan menu pilihan check order
-                menu_update = str(input('''
+                input_menu_update = str(input('''
                                     
                 Lakukan perubahan dengan menu berikut:
                 1. Ubah Nama Barang
@@ -511,16 +516,16 @@ class MenuInput:
                 '''))
             
                 #uppercase input menu_update
-                menu_update = menu_update.upper()
+                self.input_menu_update = input_menu_update.upper()
             
             #jika tidak ubah maka    
-            elif input_check_order == 'TIDAK': 
+            elif self.input_check_order == 'TIDAK': 
                 
                 #panggil kembali fungsi checkout
                 self.checkout(input_main=input_main, input_item=input_item, check_first_data=check_first_data, ulang_belanja=ulang_belanja, input_check_order=input_check_order)
                 
                 #uppercase input menu_update
-                menu_update = 0
+                self.input_menu_update = 0
             
         #keluarkan perintah error apabila tipe dan nama input tidak sesuai   
         except (NameError, ValueError, TypeError,IndexError):
@@ -570,10 +575,10 @@ class MenuInput:
                                 ''')   
                 
         #kembalikan variable menu update
-        return menu_update
+        return self.input_menu_update
     
     #membuat fungsi ubah nama
-    def ubah(self, id_pembeli, input_main, input_item, check_first_data, ulang_belanja, menu_update):
+    def ubah(self, id_pembeli, input_main, input_item, check_first_data, ulang_belanja, input_menu_update):
         
         """
         Fungsi ini berperan sebagai flow control dari semua pilihan menu untuk
@@ -590,13 +595,13 @@ class MenuInput:
             write_data = WriteData(input_main=input_main, input_item=input_item, ulang_belanja=ulang_belanja, check_first_data=check_first_data)
             
             #jika menu_update 0 maka jalankan lini berikutnya
-            if menu_update==0:
+            if self.input_menu_update==0:
                 
                 #lanjut ke baris program berikutnya
                 pass
             
             #menjalankan perintah ubah nama barang
-            elif menu_update == '1':
+            elif self.input_menu_update == '1':
     
                 #lihat rekap data
                 write_data.rekap_data(input_main=input_main, ulang_belanja=ulang_belanja)
@@ -632,10 +637,10 @@ class MenuInput:
                 update = self.menu_update(id_pembeli=id_pembeli, input_main=input_main, input_item=input_item, ulang_belanja=ulang_belanja, check_first_data=check_first_data, input_check_order=input_check_order)
         
                 #lakukan fungsi ubah nama
-                self.ubah(id_pembeli=id_pembeli, input_item=input_item, input_main=input_main, menu_update=update, ulang_belanja=ulang_belanja, check_first_data=check_first_data)
+                self.ubah(id_pembeli=id_pembeli, input_item=input_item, input_main=input_main, input_menu_update=update, ulang_belanja=ulang_belanja, check_first_data=check_first_data)
             
             #jalankan perintah mengubah jumlah
-            elif menu_update == '2':
+            elif self.input_menu_update == '2':
                 
                 #lihat data
                 write_data.rekap_data(input_main=input_main, ulang_belanja=ulang_belanja)
@@ -671,10 +676,10 @@ class MenuInput:
                 update = self.menu_update(id_pembeli=id_pembeli, input_main=input_main, input_item=input_item, ulang_belanja=ulang_belanja, check_first_data=check_first_data, input_check_order=input_check_order)
         
                 #lakukan fungsi ubah nama
-                self.ubah(id_pembeli=id_pembeli, input_item=input_item, input_main=input_main, menu_update=update, ulang_belanja=ulang_belanja, check_first_data=check_first_data)
+                self.ubah(id_pembeli=id_pembeli, input_item=input_item, input_main=input_main, input_menu_update=update, ulang_belanja=ulang_belanja, check_first_data=check_first_data)
             
             #jalankan perintah mengubah harga barang
-            elif menu_update == '3':
+            elif self.input_menu_update == '3':
                 
                 #lihat rekap data
                 write_data.rekap_data(input_main=input_main, ulang_belanja=ulang_belanja)
@@ -710,10 +715,10 @@ class MenuInput:
                 update = self.menu_update(id_pembeli=id_pembeli, input_main=input_main, input_item=input_item, ulang_belanja=ulang_belanja, check_first_data=check_first_data, input_check_order=input_check_order)
         
                 #lakukan fungsi ubah nama
-                self.ubah(id_pembeli=id_pembeli, input_item=input_item, input_main=input_main, menu_update=update, ulang_belanja=ulang_belanja, check_first_data=check_first_data)
+                self.ubah(id_pembeli=id_pembeli, input_item=input_item, input_main=input_main, input_menu_update=update, ulang_belanja=ulang_belanja, check_first_data=check_first_data)
             
             #jalankan perintah menghapus nama barang
-            elif menu_update == '4':
+            elif self.input_menu_update == '4':
                 
                 #lihat rekap data
                 write_data.rekap_data(input_main=input_main, ulang_belanja=ulang_belanja)
@@ -740,10 +745,10 @@ class MenuInput:
                 update = self.menu_update(id_pembeli=id_pembeli, input_main=input_main, input_item=input_item, ulang_belanja=ulang_belanja, check_first_data=check_first_data, input_check_order=input_check_order)
         
                 #lakukan fungsi ubah nama
-                self.ubah(id_pembeli=id_pembeli, input_item=input_item, input_main=input_main, menu_update=update, ulang_belanja=ulang_belanja, check_first_data=check_first_data)
+                self.ubah(id_pembeli=id_pembeli, input_item=input_item, input_main=input_main, input_menu_update=update, ulang_belanja=ulang_belanja, check_first_data=check_first_data)
         
             #jalankan perintah reset data
-            elif menu_update == '5':
+            elif self.input_menu_update == '5':
                 
                 #lihat rekap data
                 write_data.rekap_data(input_main=input_main, ulang_belanja=ulang_belanja)
@@ -761,10 +766,10 @@ class MenuInput:
                 update = self.menu_update(id_pembeli=id_pembeli, input_main=input_main, input_item=input_item, ulang_belanja=ulang_belanja, check_first_data=check_first_data, input_check_order=input_check_order)
         
                 #lakukan fungsi ubah nama
-                self.ubah(id_pembeli=id_pembeli, input_item=input_item, input_main=input_main, menu_update=update, ulang_belanja=ulang_belanja, check_first_data=check_first_data)
+                self.ubah(id_pembeli=id_pembeli, input_item=input_item, input_main=input_main, input_menu_update=update, ulang_belanja=ulang_belanja, check_first_data=check_first_data)
                     
             #jalankan perintah menambahkan kembali barang belanjaan
-            elif menu_update == '6':
+            elif self.input_menu_update == '6':
                 
                 #lihat rekap data
                 write_data.rekap_data(input_main=input_main, ulang_belanja=ulang_belanja)
@@ -779,7 +784,7 @@ class MenuInput:
                 update = self.menu_update(id_pembeli=id_pembeli, input_main=input_main, input_item=input_item, ulang_belanja=ulang_belanja, check_first_data=check_first_data, input_check_order=input_check_order)
         
                 #lakukan fungsi ubah nama
-                self.ubah(id_pembeli=id_pembeli, input_item=input_item, input_main=input_main, menu_update=update, ulang_belanja=ulang_belanja, check_first_data=check_first_data)
+                self.ubah(id_pembeli=id_pembeli, input_item=input_item, input_main=input_main, input_menu_update=update, ulang_belanja=ulang_belanja, check_first_data=check_first_data)
             
             #apabila memasukkan input selain menu diatas tampilkan pesan error            
             else :
@@ -794,7 +799,7 @@ class MenuInput:
                 update = self.menu_update(id_pembeli=id_pembeli, input_main=input_main, input_item=input_item, ulang_belanja=ulang_belanja, check_first_data=check_first_data, input_check_order=input_check_order)
         
                 #lakukan fungsi ubah nama
-                self.ubah(id_pembeli=id_pembeli, input_item=input_item, input_main=input_main, menu_update=update, ulang_belanja=ulang_belanja, check_first_data=check_first_data)
+                self.ubah(id_pembeli=id_pembeli, input_item=input_item, input_main=input_main, input_menu_update=update, ulang_belanja=ulang_belanja, check_first_data=check_first_data)
         
         #keluarkan perintah error apabila tipe dan nama input tidak sesuai   
         except (NameError, ValueError, TypeError,IndexError):
@@ -810,9 +815,9 @@ class MenuInput:
              #tampilkan menu update kembali
              update = self.menu_update(id_pembeli=id_pembeli, input_main=input_main, input_item=input_item, ulang_belanja=ulang_belanja, input_check_order=input_check_order)
         
-             #lakukan fungsi ubah nama
-             self.ubah(id_pembeli=id_pembeli, input_item=input_item, input_main=input_main, menu_update=update, ulang_belanja=ulang_belanja, check_first_data=check_first_data)
-                
+            #lakukan fungsi ubah nama
+             self.ubah(id_pembeli=id_pembeli, input_item=input_item, input_main=input_main, input_menu_update=update, ulang_belanja=ulang_belanja, check_first_data=check_first_data)
+             
         #memunculkan pesan terminal apabila program diberhentikan secara paksa                  
         except (InterruptedError):
                 

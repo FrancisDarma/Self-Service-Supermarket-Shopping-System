@@ -53,7 +53,7 @@ def main_menu():
             id_pembeli = IDPembeli(agree=input_main).generate_id(agree=input_main)
             
             #buat objek menu_input_instance dari class MenuInput
-            menu_input_instance = MenuInput(input_main=input_main, input_item=input_item, id_pembeli=id_pembeli, ulang_belanja=None, input_check_order=None)
+            menu_input_instance = MenuInput(input_main=input_main, input_item=input_item, id_pembeli=id_pembeli, ulang_belanja=None, input_check_order=None, input_menu_update=None)
             
             #masukkan entry untuk data pertama dengan menggunakan menu check input
             input_item = menu_input_instance.check_input(id_pembeli=id_pembeli, input_main=input_main)
@@ -74,7 +74,7 @@ def main_menu():
             update = menu_input_instance.menu_update(input_check_order=input_check_order, input_item=input_item, input_main=input_main, id_pembeli=id_pembeli, ulang_belanja=ulang_belanja, check_first_data=check_first_data)
             
             #jalankan perintah lanjutan dan eksekusi untuk setiap menunya
-            menu_input_instance.ubah(id_pembeli=id_pembeli, input_main=input_main, input_item=input_item, menu_update=update, ulang_belanja=ulang_belanja, check_first_data=check_first_data)
+            menu_input_instance.ubah(id_pembeli=id_pembeli, input_main=input_main, input_item=input_item, input_menu_update=update, ulang_belanja=ulang_belanja, check_first_data=check_first_data)
             
         #tampilkan pesan terima kasih apabila customer memutuskan untuk tidak melanjutkan belanja
         elif input_main == "TIDAK":

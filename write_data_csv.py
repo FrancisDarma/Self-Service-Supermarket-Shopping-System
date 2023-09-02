@@ -54,32 +54,38 @@ class WriteData:
         #coba jalankan perintah dibawah
         try:
             
-            #buka file csv kosong
-            with open(file= "D:/pacmann/super_cashier/csv_test.csv", mode='w', newline='') as csvtest:
+            if len(input_item)!=0:
+            
+                #buka file csv kosong
+                with open(file= "D:/pacmann/super_cashier/csv_stagging.csv", mode='w', newline='') as csvtest:
 
-                #definisikan nama kolom
-                cols = ['id_pembeli','nama_barang','jumlah_barang','harga_barang','kota']                   
+                    #definisikan nama kolom
+                    cols = ['id_pembeli','nama_barang','jumlah_barang','harga_barang','kota']                   
+                        
+                    #define rows data dengan variable input item               
+                    rows = input_item
+                                        
+                    # buat objek csv writer
+                    csv_dict_writer = csv.DictWriter(csvtest, fieldnames = cols)      
                     
-                #define rows data dengan variable input item               
-                rows = input_item
-                                    
-                # buat objek csv writer
-                csv_dict_writer = csv.DictWriter(csvtest, fieldnames = cols)      
-                
-                #menulis nama kolom
-                csv_dict_writer.writeheader()
+                    #menulis nama kolom
+                    csv_dict_writer.writeheader()
+                        
+                    # tulis nama baris
+                    csv_dict_writer.writerow(rows)
                     
-                # tulis nama baris
-                csv_dict_writer.writerow(rows)
-                
-                #print data berhasil tersimpan
-                print('''
-                        <<<Data pertama berhasil tersimpan pada csv>>>
-                        ''')
+                    #print data berhasil tersimpan
+                    print('''
+                            <<<Data pertama berhasil tersimpan pada csv>>>
+                            ''')
 
-                #check apakah ini entry data pertama atau bukan
-                check_first_data = (csvtest.tell() == 0)
+                    #check apakah ini entry data pertama atau bukan
+                    check_first_data = (csvtest.tell() == 0)
                 
+            elif len(input_item)!=0:
+                
+                pass
+            
         #keluarkan perintah error apabila tipe dan nama input tidak sesuai 
         except (NameError, ValueError, TypeError,IndexError):
                 
@@ -158,10 +164,10 @@ class WriteData:
         try:
             
             #apabila ulang belanja 'YA' dan csv tidak kosong maka       
-            if ulang_belanja=='YA' and check_first_data==False:
+            if ulang_belanja=='YA' and check_first_data==False and len(input_item)!=0:
             
                 #buka file csv untuk append
-                with open(file= "D:/pacmann/super_cashier/csv_test.csv", mode='a', newline='') as csvtest:
+                with open(file= "D:/pacmann/super_cashier/csv_stagging.csv", mode='a', newline='') as csvtest:
                     
                     #definisikan nama kolom
                     cols = ['id_pembeli','nama_barang','jumlah_barang','harga_barang','kota'] 
@@ -184,7 +190,7 @@ class WriteData:
                     ''')
 
             #apabila customer menjawab tidak dan file csv tidak kosong
-            elif ulang_belanja=='TIDAK' and check_first_data==False:
+            elif ulang_belanja=='TIDAK' and check_first_data==False and (len(input_item)==0 or len(input_item)!=0):
                 
                 #teruskan ke baris kode berikutnya
                 pass
@@ -292,7 +298,7 @@ class WriteData:
             if ulang_belanja == 'TIDAK' and input_main == 'YA':
             
                 #buka file untuk membaca
-                with open(file='D:/pacmann/super_cashier/csv_test.csv',mode='r') as csvread:
+                with open(file='D:/pacmann/super_cashier/csv_stagging.csv',mode='r') as csvread:
                         
                     #read csv
                     csv_read = csv.DictReader(csvread)
@@ -470,7 +476,7 @@ class WriteData:
         try:
             
             #buka file csv untuk dibaca
-            with open(file='D:/pacmann/super_cashier/csv_test.csv',mode='r') as csvread:
+            with open(file='D:/pacmann/super_cashier/csv_stagging.csv',mode='r') as csvread:
                     
                 #buat list kosong       
                 list_baca = [] 
@@ -566,7 +572,7 @@ class WriteData:
         try:
             
             #open csv file
-            with open(file="D:/pacmann/super_cashier/csv_test.csv", mode='r') as csvupdate:
+            with open(file="D:/pacmann/super_cashier/csv_stagging.csv", mode='r') as csvupdate:
                     
                 #read csv
                 csv_update = csv.DictReader(csvupdate)
@@ -588,7 +594,7 @@ class WriteData:
                         row['nama_barang']=new_data
 
             #open csv file
-            with open(file="D:/pacmann/super_cashier/csv_test.csv", mode='w') as csvupdate:
+            with open(file="D:/pacmann/super_cashier/csv_stagging.csv", mode='w') as csvupdate:
                             
                 # Menggunakan DictWriter untuk menulis data kembali ke file CSV
                 writer = csv.DictWriter(csvupdate, fieldnames=list_data[0].keys())
@@ -676,7 +682,7 @@ class WriteData:
         try:
         
             #open csv file
-            with open(file="D:/pacmann/super_cashier/csv_test.csv", mode='r') as csvupdate:
+            with open(file="D:/pacmann/super_cashier/csv_stagging.csv", mode='r') as csvupdate:
                     
                 #read csv
                 csv_update = csv.DictReader(csvupdate)
@@ -698,7 +704,7 @@ class WriteData:
                         row['jumlah_barang']=int(new_data)
 
             #open csv file
-            with open(file="D:/pacmann/super_cashier/csv_test.csv", mode='w') as csvupdate:
+            with open(file="D:/pacmann/super_cashier/csv_stagging.csv", mode='w') as csvupdate:
                             
                 # Menggunakan DictWriter untuk menulis data kembali ke file CSV
                 writer = csv.DictWriter(csvupdate, fieldnames=list_data[0].keys())
@@ -785,7 +791,7 @@ class WriteData:
         try:
         
             #open csv file
-            with open(file="D:/pacmann/super_cashier/csv_test.csv", mode='r') as csvupdate:
+            with open(file="D:/pacmann/super_cashier/csv_stagging.csv", mode='r') as csvupdate:
                     
                 # read csv
                 csv_update = csv.DictReader(csvupdate)
@@ -807,7 +813,7 @@ class WriteData:
                         row['harga_barang']=int(new_data)
 
             #open csv file
-            with open(file="D:/pacmann/super_cashier/csv_test.csv", mode='w') as csvupdate:
+            with open(file="D:/pacmann/super_cashier/csv_stagging.csv", mode='w') as csvupdate:
                             
                 # Menggunakan DictWriter untuk menulis data kembali ke file CSV
                 writer = csv.DictWriter(csvupdate, fieldnames=list_data[0].keys())
@@ -893,7 +899,7 @@ class WriteData:
         try:
         
             #open csv file
-            with open(file="D:/pacmann/super_cashier/csv_test.csv", mode='r') as csvupdate:
+            with open(file="D:/pacmann/super_cashier/csv_stagging.csv", mode='r') as csvupdate:
                     
                 #read csv
                 csv_update = csv.DictReader(csvupdate)
@@ -908,7 +914,7 @@ class WriteData:
                     list_data.append(row) 
     
             #open csv file
-            with open(file="D:/pacmann/super_cashier/csv_test.csv", mode='w') as csvupdate:
+            with open(file="D:/pacmann/super_cashier/csv_stagging.csv", mode='w') as csvupdate:
 
                 # Menggunakan DictWriter untuk menulis data kembali ke file CSV
                 writer = csv.DictWriter(csvupdate, fieldnames=list_data[0].keys())
@@ -997,7 +1003,7 @@ class WriteData:
         try:
     
             #open csv file
-            with open(file="D:/pacmann/super_cashier/csv_test.csv", mode='r') as csvupdate:
+            with open(file="D:/pacmann/super_cashier/csv_stagging.csv", mode='r') as csvupdate:
                     
                 #read csv
                 csv_update = csv.DictReader(csvupdate)
@@ -1006,7 +1012,7 @@ class WriteData:
                 cols = csv_update.fieldnames
 
             #open csv file
-            with open(file="D:/pacmann/super_cashier/csv_test.csv", mode='w') as csvupdate:
+            with open(file="D:/pacmann/super_cashier/csv_stagging.csv", mode='w') as csvupdate:
                             
                 #Menggunakan DictWriter untuk menulis data kembali ke file CSV
                 writer = csv.DictWriter(csvupdate, fieldnames=cols)

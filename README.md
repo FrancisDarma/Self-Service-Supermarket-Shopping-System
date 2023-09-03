@@ -158,7 +158,7 @@
                     </li>
                     <li>
                     Step 2: Identifying fields that need to exist in table database.Image can be seen below:
-                    <img src="./images/table.png" alt="transaction table picture" align="left" width=300/>
+                    <img src="./images/table.png" alt="transaction table picture" align="left" width="100%"/>
                     </li>
                     <li>
                     Output: data_super_cashier.db
@@ -174,7 +174,7 @@
                     </li>
                     <li>
                     Step 2: Build modules based on their functionalities and each of the modules have classes and functions that supports those functions, classes and function list can seen below
-                    <img src="./images/function_list.png" alt="list of function table" align="left" width="80%"/> 
+                    <img src="./images/function_list.png" alt="list of function table" align="left" width="100%"/> 
                     </li>
                     </li>
                     Step 3: Establish connection with SQLite database by built an table manipulation modules.
@@ -191,14 +191,14 @@
             <ol type="1">
                 <li>
                 <p>Clone/download this git repository into your local computer. It should contain:</p>
-                <img src="./images/files_list.png" width="300" align="left"/>
+                <img src="./images/files_list.png" width="100%" align="left"/>
                 </li>
                 <li>
                 <p>
                     Open terminal > go to git repository directory or any file location where you download the files on your local computer, 
                     then type "python main.py" on your command line to execute. Refer to screenshot below:
                 </p>
-                <img src="./images/intro_menu.png" width="1000" align="left"/>
+                <img src="./images/intro_menu.png" width="100%" align="left"/>
                 </li>
             </ol>
         </li>
@@ -211,27 +211,27 @@
                             <p>
                             Type "YA" to confirm to add first item to the shopping cart
                             </p>
-                            <img src="./images/intro_menu.png" alt="first menu picture" align="left" width="75%"/>
+                            <img src="./images/intro_menu.png" alt="first menu picture" align="left" width="100%"/>
                         </li>
                         <li>
                             <p>
                             Type the order with details separated by comma.
                             </p>
-                            <img src="./images/input_first_item.png" alt="input first item picture" align="left" width="75%"/>
+                            <img src="./images/input_first_item.png" alt="input first item picture" align="left" width="100%"/>
                         </li>
                         <li>
                             <p>
                             Soon the order will be written in csv stagging file and you would get 
                             notification of the process status                           
                             </p>
-                            <img src="./images/additional_order_input_confirmation.png" alt="additional_order_input_confirmation" align="left" width="75%"/>
+                            <img src="./images/additional_order_input_confirmation.png" alt="additional_order_input_confirmation" align="left" width="100%"/>
                         </li>
                         <li>
                             <p>
                                 Type "TIDAK" when you are asked to add additional orders, 
                                 so the program will display the summary                           
                             </p>
-                                <img src="./images/temporary_order_summary.png" alt="temporary order summary picture" align="left" width="75%"/>
+                                <img src="./images/temporary_order_summary.png" alt="temporary order summary picture" align="left" width="100%"/>
                         </li>
                     </ol>
                 </li>
@@ -241,27 +241,27 @@
                             <p>
                             Type "YA" to confirm to add first item to the shopping cart
                             </p>
-                            <img src="./images/intro_menu.png" alt="first menu picture" align="left" width="75%"/>
+                            <img src="./images/intro_menu.png" alt="first menu picture" align="left" width="100%"/>
                         </li>
                         <li>
                             <p>
                             Type the order with details separated by comma.
                             </p>
-                            <img src="./images/input_first_item.png" alt="input first item picture" align="left" width="75%"/>
+                            <img src="./images/input_first_item.png" alt="input first item picture" align="left" width="100%"/>
                         </li>
                         <li>
                             <p>
                             Soon the order will be written in csv stagging file and you would get 
                             notification of the process status                           
                             </p>
-                            <img src="./images/additional_order_input_confirmation.png" alt="additional_order_input_confirmation" align="left" width="75%"/>
+                            <img src="./images/additional_order_input_confirmation.png" alt="additional_order_input_confirmation" align="left" width="100%"/>
                         </li>
                         <li>
                             <p>
                                 Type "TIDAK" when you are asked to add additional orders, 
                                 so the program will display the summary                           
                             </p>
-                                <img src="./images/temporary_order_summary.png" alt="temporary order summary picture" align="left" width="75%"/>
+                                <img src="./images/temporary_order_summary.png" alt="temporary order summary picture" align="left" width="100%"/>
                         </li>
                     </ol>
                 </li>
@@ -271,57 +271,56 @@
                             <p>
                             Type "YA" to confirm to add first item to the shopping cart
                             </p>
-                            <img src="./images/intro_menu.png" alt="first menu picture" align="left" width="75%"/>
+                            <img src="./images/intro_menu.png" alt="first menu picture" align="left" width="100%"/>
                         </li>
                         <li>
                             <p>
                             Type the order with details separated by comma.
                             </p>
-                            <img src="./images/input_first_item.png" alt="input first item picture" align="left" width="75%"/>
+                            <img src="./images/input_first_item.png" alt="input first item picture" align="left" width="100%"/>
                         </li>
                         <li>
                             <p>
                             Soon the order will be written in csv stagging file and you would get 
                             notification of the process status                           
                             </p>
-                            <img src="./images/additional_order_input_confirmation.png" alt="additional_order_input_confirmation" align="left" width="75%"/>
+                            <img src="./images/additional_order_input_confirmation.png" alt="additional_order_input_confirmation" align="left" width="100%"/>
                         </li>
                         <li>
                             <p>
                                 Type "TIDAK" when you are asked to add additional orders, 
                                 so the program will display the summary                           
                             </p>
-                                <img src="./images/temporary_order_summary.png" alt="temporary order summary picture" align="left" width="75%"/>
+                                <img src="./images/temporary_order_summary.png" alt="temporary order summary picture" align="left" width="100%"/>
                         </li>
                     </ol>
                 </li>
-                <li><h3>Checkout</h3>
                     <ol type="1">
                         <li>
                             <p>
                             Type "YA" to confirm to add first item to the shopping cart
                             </p>
-                            <img src="./images/intro_menu.png" alt="first menu picture" align="left" width="75%"/>
+                            <img src="./images/intro_menu.png" alt="first menu picture" align="left" width="100%"/>
                         </li>
                         <li>
                             <p>
                             Type the order with details separated by comma.
                             </p>
-                            <img src="./images/input_first_item.png" alt="input first item picture" align="left" width="75%"/>
+                            <img src="./images/input_first_item.png" alt="input first item picture" align="left" width="100%"/>
                         </li>
                         <li>
                             <p>
                             Soon the order will be written in csv stagging file and you would get 
                             notification of the process status                           
                             </p>
-                            <img src="./images/additional_order_input_confirmation.png" alt="additional_order_input_confirmation" align="left" width="75%"/>
+                            <img src="./images/additional_order_input_confirmation.png" alt="additional_order_input_confirmation" align="left" width="100%"/>
                         </li>
                         <li>
                             <p>
                                 Type "TIDAK" when you are asked to add additional orders, 
                                 so the program will display the summary                           
                             </p>
-                                <img src="./images/temporary_order_summary.png" alt="temporary order summary picture" align="left" width="75%"/>
+                                <img src="./images/temporary_order_summary.png" alt="temporary order summary picture" align="left" width="100%"/>
                         </li>
                     </ol>
                 </li>

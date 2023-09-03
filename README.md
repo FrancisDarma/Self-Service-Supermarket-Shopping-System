@@ -17,32 +17,34 @@
         </li>
         <li>
         <h2>System Flowchart</h2>
-        <div id="System Flow Chart Picture">
-        <img src="./images/system_flowchart.jpg" alt="Program Flowchart Pictre" width="1000"/>
-        <figcaption align="center"><i>Self-Service Supermarket Management System Flowchart</i></figcaption>
-        <br/>
-        <p><b>
-        This is the workflow of the system:
-        </b></p>
-            <ol>
-                <li>Customer confirm to start the program.</li>
-                <li>System will automaticaly generate random customer ID.</li>
-                <li>Customer input the order data into the system includes item name, order quantity, item price, and city(additional).</li>
-                <li>Automatically program will transform the input into suitable data structures that can be processed for the next step. If the data structure is not suitable, program will immediately throw an error and reshow the input order data menu.</li>
-                <li>Customers input additional orders into the cart until they immediately confirm to stop adding order items.</li>
-                <li>Customers immediately ask to confirm if there any changes or deletes they want to implement in their cart using several methods. Those are:
+            <div id="System Flow Chart Picture" width="100%">
+            <img src="./images/system_flowchart.jpg" alt="Program Flowchart Pictre" width="100%" align="left"/>
+            <figcaption align="center"><i>Self-Service Supermarket Management System Flowchart</i></figcaption>
+            </div>
+        <div width="1000">
+            <br/>
+            <p><b>
+            This is the workflow of the system:
+            </b></p>
                 <ol>
-                    <li>Updating or changing item names.</li>
-                    <li>Updating or changing order quantity for certain item.</li>
-                    <li>Updating or changing price of an item.</li>
-                    <li>Dropping or deleting an item from the cart.</li>
-                    <li>Reset/clear cart.</li>
-                    <li>Reapply adding order item menu(additional method).</li>
+                    <li>Customer confirm to start the program.</li>
+                    <li>System will automaticaly generate random customer ID.</li>
+                    <li>Customer input the order data into the system includes item name, order quantity, item price, and city(additional).</li>
+                    <li>Automatically program will transform the input into suitable data structures that can be processed for the next step. If the data structure is not suitable, program will immediately throw an error and reshow the input order data menu.</li>
+                    <li>Customers input additional orders into the cart until they immediately confirm to stop adding order items.</li>
+                    <li>Customers immediately ask to confirm if there any changes or deletes they want to implement in their cart using several methods. Those are:
+                    <ol>
+                        <li>Updating or changing item names.</li>
+                        <li>Updating or changing order quantity for certain item.</li>
+                        <li>Updating or changing price of an item.</li>
+                        <li>Dropping or deleting an item from the cart.</li>
+                        <li>Reset/clear cart.</li>
+                        <li>Reapply adding order item menu(additional method).</li>
+                    </ol>
+                    </li>
+                    <li>If the customers done implementing the updates, then the system immediately will show the summary of the cart including total shopping amount, discount percentage, discount price, and total payments need to be paid.</li>
+                    <li>The system then immediately injects data into SQLite database using python API Injection.</li>
                 </ol>
-                </li>
-                <li>If the customers done implementing the updates, then the system immediately will show the summary of the cart including total shopping amount, discount percentage, discount price, and total payments need to be paid.</li>
-                <li>The system then immediately injects data into SQLite database using python API Injection.</li>
-            </ol>
         </div>
         </li>
         <li>
@@ -78,8 +80,13 @@
                 </li>
                 <li>Customer can delete item with these methods:
                     <ul>
-                        <li>delete_item(item_name), that will result:
-                        <img src="" alt="One record has been deleted from the shopping cart picture"/>
+                        <li>
+                        <p>delete_item(item_name), that will result:</p>
+                        <table width="100%">
+                            <tr>
+                            <img src="./images/delete_item_example.png" alt="One record has been deleted from the shopping cart picture" align="left"/>
+                            </tr>
+                        </table>
                         </li>
                         <li>reset transaction that will delete all the item order from the cart</li>
                     </ul>   
@@ -121,7 +128,7 @@
         <h2>Objective</h2>
             <ul>
                 <li><b>Learning Objectives</b>
-                    <ol>
+                    <ol type="1">
                         <li>Creating Self-Service Management System with required features using Python.</li>
                         <li>Connecting python program to sqlite database.</li>
                         <li>Using OOP to create python program.</li>
@@ -132,7 +139,7 @@
                     </ol>
                 </li>
                 <li><b>Program Objectives</b>
-                    <ol>
+                    <ol type="1">
                         <li>Adding new unique transaction id on each transaction session.</li>
                         <li>Adding new order item in a cart once in a time.</li>
                         <li>Convert input immediately to valid data structure (throughout the program we will use dictionary and list).</li>
@@ -148,17 +155,24 @@
         <ul>
             <li>
             <h3>Database Design</h3>
+            <div>
                 <ul>
                     <li>
                     Step 1: Create database data_super_cashier.db
                     </li>
                     <li>
                     Step 2: Identifying fields that need to exist in table database.Image can be seen below:
-                    <img src="./images/table.png" alt="transaction table picture"/>
+                    <table width="100%">
+                        <tr>
+                        <img src="./images/table.png" alt="transaction table picture" align="left" width=300/>
+                        </tr>
+                    </table>
                     </li>
+                    <li>
                     Output: data_super_cashier.db
                     </li>
                 </ul>
+            </div>
             </li>
             <li>
             <h3>Method and Object Design</h3>
@@ -168,6 +182,11 @@
                     </li>
                     <li>
                     Step 2: Build modules based on their functionalities and each of the modules have classes and functions that supports those functions, classes and function list can seen below
+                    <table width="100%">
+                        <tr>
+                            <img src="./images/function_list.png" alt="list of function table" align="left" width="80%"/>
+                        </tr>
+                    </table>     
                     </li>
                     </li>
                     Step 3: Establish connection with SQLite database by built an table manipulation modules.
@@ -176,29 +195,220 @@
                     Step 4: Import the modules in main.py,
                     </li>
                 </ul>
-            <img src="./images/function_list.png" alt="list of function table"/>
             </li>
         </ul>
         </li>
         <li>
         <h2>Guide to Try It Yourself</h2>
-            <ol>
-                <li>Clone/download this git repository into your local computer. It should contain:
-                    <img src="./images/files_list.png" width="300"/>
+            <ol type="1">
+                <li>
+                <p>Clone/download this git repository into your local computer. It should contain:</p>
+                <table width="100%">
+                    <tr>
+                    <img src="./images/files_list.png" width="300" align="left"/>
+                    </tr>
+                </table>
                 </li>
-                <li>Open terminal > go to git repository directory or any file location where you download the files on your local computer, then type "python main.py" on your command line to execute. Refer to screenshot below:
-                    <img src="./images/intro_menu.png" width="1000"/>
+                <li>
+                <p>
+                    Open terminal > go to git repository directory or any file location where you download the files on your local computer, 
+                    then type "python main.py" on your command line to execute. Refer to screenshot below:
+                </p>
+                <table width="100%">
+                    <tr>
+                    <img src="./images/intro_menu.png" width="1000" align="left"/>
+                    </tr>
+                </table>
                 </li>
             </ol>
         </li>
         <li>
         <h2>Test Case</h2>
-            <ol>
-                <li><h3>Add order item</h3></li>
-                <li><h3>Delete item</h3></li>
-                <li><h3>Reset Transaction</h3></li>
-                <li><h3>Checkout</h3></li>
-            </ol>
+            <ul>
+                <li><h3>Add order item</h3>
+                    <ol type="1">
+                        <li>
+                            <p>
+                            Type "YA" to confirm to add first item to the shopping cart
+                            </p>
+                        <table width="100%"">
+                            <tr>
+                                <img src="./images/intro_menu.png" alt="first menu picture" align="left" width="75%"/>
+                            </tr>
+                        </table>
+                        </li>
+                        <li>
+                            <p>
+                            Type the order with details separated by comma.
+                            </p>
+                        <table width="100%">
+                            <tr>
+                                <img src="./images/input_first_item.png" alt="input first item picture" align="left" width="75%"/>
+                            </tr>
+                        </table>
+                        </li>
+                        <li>
+                            <p>
+                            Soon the order will be written in csv stagging file and you would get 
+                            notification of the process status                           
+                            </p>
+                        <table width="100%">
+                            <tr>
+                                <img src="./images/additional_order_input_confirmation.png" alt="additional_order_input_confirmation" align="left" width="75%"/>
+                            </tr> 
+                        </table>
+                        </li>
+                        <li>
+                            <p>
+                                Type "TIDAK" when you are asked to add additional orders, 
+                                so the program will display the summary                           
+                            </p>
+                            <table width="100%">
+                                <tr>
+                                    <img src="./images/temporary_order_summary.png" alt="temporary order summary picture" align="left" width="75%"/>
+                                </tr> 
+                            </table>
+                        </li>
+                    </ol>
+                </li>
+                <li><h3>Delete item</h3>
+                    <ol type="1">
+                        <li>
+                            <p>
+                            Type "YA" to confirm to add first item to the shopping cart
+                            </p>
+                        <table width="100%"">
+                            <tr>
+                                <img src="./images/intro_menu.png" alt="first menu picture" align="left" width="75%"/>
+                            </tr>
+                        </table>
+                        </li>
+                        <li>
+                            <p>
+                            Type the order with details separated by comma.
+                            </p>
+                        <table width="100%">
+                            <tr>
+                                <img src="./images/input_first_item.png" alt="input first item picture" align="left" width="75%"/>
+                            </tr>
+                        </table>
+                        </li>
+                        <li>
+                            <p>
+                            Soon the order will be written in csv stagging file and you would get 
+                            notification of the process status                           
+                            </p>
+                        <table width="100%">
+                            <tr>
+                                <img src="./images/additional_order_input_confirmation.png" alt="additional_order_input_confirmation" align="left" width="75%"/>
+                            </tr> 
+                        </table>
+                        </li>
+                        <li>
+                            <p>
+                                Type "TIDAK" when you are asked to add additional orders, 
+                                so the program will display the summary                           
+                            </p>
+                            <table width="100%">
+                                <tr>
+                                    <img src="./images/temporary_order_summary.png" alt="temporary order summary picture" align="left" width="75%"/>
+                                </tr> 
+                            </table>
+                        </li>
+                    </ol>
+                </li>
+                <li><h3>Reset Transaction</h3>
+                    <ol type="1">
+                        <li>
+                            <p>
+                            Type "YA" to confirm to add first item to the shopping cart
+                            </p>
+                        <table width="100%"">
+                            <tr>
+                                <img src="./images/intro_menu.png" alt="first menu picture" align="left" width="75%"/>
+                            </tr>
+                        </table>
+                        </li>
+                        <li>
+                            <p>
+                            Type the order with details separated by comma.
+                            </p>
+                        <table width="100%">
+                            <tr>
+                                <img src="./images/input_first_item.png" alt="input first item picture" align="left" width="75%"/>
+                            </tr>
+                        </table>
+                        </li>
+                        <li>
+                            <p>
+                            Soon the order will be written in csv stagging file and you would get 
+                            notification of the process status                           
+                            </p>
+                        <table width="100%">
+                            <tr>
+                                <img src="./images/additional_order_input_confirmation.png" alt="additional_order_input_confirmation" align="left" width="75%"/>
+                            </tr> 
+                        </table>
+                        </li>
+                        <li>
+                            <p>
+                                Type "TIDAK" when you are asked to add additional orders, 
+                                so the program will display the summary                           
+                            </p>
+                            <table width="100%">
+                                <tr>
+                                    <img src="./images/temporary_order_summary.png" alt="temporary order summary picture" align="left" width="75%"/>
+                                </tr> 
+                            </table>
+                        </li>
+                    </ol>
+                </li>
+                <li><h3>Checkout</h3>
+                    <ol type="1">
+                        <li>
+                            <p>
+                            Type "YA" to confirm to add first item to the shopping cart
+                            </p>
+                        <table width="100%"">
+                            <tr>
+                                <img src="./images/intro_menu.png" alt="first menu picture" align="left" width="75%"/>
+                            </tr>
+                        </table>
+                        </li>
+                        <li>
+                            <p>
+                            Type the order with details separated by comma.
+                            </p>
+                        <table width="100%">
+                            <tr>
+                                <img src="./images/input_first_item.png" alt="input first item picture" align="left" width="75%"/>
+                            </tr>
+                        </table>
+                        </li>
+                        <li>
+                            <p>
+                            Soon the order will be written in csv stagging file and you would get 
+                            notification of the process status                           
+                            </p>
+                        <table width="100%">
+                            <tr>
+                                <img src="./images/additional_order_input_confirmation.png" alt="additional_order_input_confirmation" align="left" width="75%"/>
+                            </tr> 
+                        </table>
+                        </li>
+                        <li>
+                            <p>
+                                Type "TIDAK" when you are asked to add additional orders, 
+                                so the program will display the summary                           
+                            </p>
+                            <table width="100%">
+                                <tr>
+                                    <img src="./images/temporary_order_summary.png" alt="temporary order summary picture" align="left" width="75%"/>
+                                </tr> 
+                            </table>
+                        </li>
+                    </ol>
+                </li>
         </li>
         <li>
         <h2>Conlusion</h2>

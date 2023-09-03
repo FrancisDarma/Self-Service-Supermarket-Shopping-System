@@ -204,7 +204,7 @@
         </li>
         <li>
         <h2>Test Case</h2>
-            <ol>
+            <ol type="1">
                 <li><h3>Add order item</h3>
                     <ol type="1">
                         <li>
@@ -239,29 +239,27 @@
                     <ol type="1">
                         <li>
                             <p>
-                            Type "YA" to confirm to add first item to the shopping cart
+                            Type "UBAH" to confirm to display update menu
                             </p>
-                            <img src="./images/intro_menu.png" alt="first menu picture" align="left" width="100%"/>
+                            <img src="./images/displaying_menu_ubah.png" alt="first menu picture" align="left" width="100%"/>
                         </li>
                         <li>
                             <p>
-                            Type the order with details separated by comma.
+                            Type delete item menu number.
                             </p>
-                            <img src="./images/input_first_item.png" alt="input first item picture" align="left" width="100%"/>
+                            <img src="./images/type_delete_menu.png" alt="input first item picture" align="left" width="100%"/>
                         </li>
                         <li>
                             <p>
-                            Soon the order will be written in csv stagging file and you would get 
-                            notification of the process status                           
+                            Type the name of the item that want to be deleted.
                             </p>
-                            <img src="./images/additional_order_input_confirmation.png" alt="additional_order_input_confirmation" align="left" width="100%"/>
+                            <img src="./images/type_item_name_to_delete.png" alt="additional_order_input_confirmation" align="left" width="100%"/>
                         </li>
                         <li>
                             <p>
-                                Type "TIDAK" when you are asked to add additional orders, 
-                                so the program will display the summary                           
+                            Item deletion succeed                          
                             </p>
-                                <img src="./images/temporary_order_summary.png" alt="temporary order summary picture" align="left" width="100%"/>
+                                <img src="./images/success_delete.png" alt="temporary order summary picture" align="left" width="100%"/>
                         </li>
                     </ol>
                 </li>
@@ -269,61 +267,47 @@
                     <ol type="1">
                         <li>
                             <p>
-                            Type "YA" to confirm to add first item to the shopping cart
+                            Type "UBAH" to confirm to display update menu
                             </p>
-                            <img src="./images/intro_menu.png" alt="first menu picture" align="left" width="100%"/>
+                            <img src="./images/ubah_for_reset.png" alt="first menu picture" align="left" width="100%"/>
                         </li>
                         <li>
                             <p>
-                            Type the order with details separated by comma.
+                            Type reset item menu number.
                             </p>
-                            <img src="./images/input_first_item.png" alt="input first item picture" align="left" width="100%"/>
+                            <img src="./images/input_menu_reset.png" alt="input first item picture" align="left" width="100%"/>
                         </li>
                         <li>
                             <p>
-                            Soon the order will be written in csv stagging file and you would get 
-                            notification of the process status                           
+                            Immediately the emptied cart displayed                        
                             </p>
-                            <img src="./images/additional_order_input_confirmation.png" alt="additional_order_input_confirmation" align="left" width="100%"/>
-                        </li>
-                        <li>
-                            <p>
-                                Type "TIDAK" when you are asked to add additional orders, 
-                                so the program will display the summary                           
-                            </p>
-                                <img src="./images/temporary_order_summary.png" alt="temporary order summary picture" align="left" width="100%"/>
+                            <img src="./images/reset_process.png" alt="additional_order_input_confirmation" align="left" width="100%"/>
                         </li>
                     </ol>
                 </li>
+                <li><h3>Checkout</h3>
                     <ol type="1">
                         <li>
                             <p>
-                            Type "YA" to confirm to add first item to the shopping cart
+                            Type "TIDAK" to confirm to finalize the cart
                             </p>
-                            <img src="./images/intro_menu.png" alt="first menu picture" align="left" width="100%"/>
+                            <img src="./images/finalize_cart.png" alt="first menu picture" align="left" width="100%"/>
                         </li>
                         <li>
                             <p>
-                            Type the order with details separated by comma.
+                            Summary of total amount, discount, total payments will be displayed
                             </p>
-                            <img src="./images/input_first_item.png" alt="input first item picture" align="left" width="100%"/>
+                            <img src="./images/summary_of_final_cart.png" alt="input first item picture" align="left" width="100%"/>
                         </li>
                         <li>
                             <p>
-                            Soon the order will be written in csv stagging file and you would get 
-                            notification of the process status                           
+                            There will be a notification if data injection has successfully executed                     
                             </p>
-                            <img src="./images/additional_order_input_confirmation.png" alt="additional_order_input_confirmation" align="left" width="100%"/>
-                        </li>
-                        <li>
-                            <p>
-                                Type "TIDAK" when you are asked to add additional orders, 
-                                so the program will display the summary                           
-                            </p>
-                                <img src="./images/temporary_order_summary.png" alt="temporary order summary picture" align="left" width="100%"/>
+                            <img src="./images/success_inject_data_notification.png" alt="additional_order_input_confirmation" align="left" width="100%"/>
                         </li>
                     </ol>
                 </li>
+            </ol>
         </li>
         <li>
         <h2>Conlusion</h2>
